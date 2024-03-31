@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-tbe-5l69ogamm94tnh7(hj=cc76)6w34l-4%a-@9n+36*49&au
 DEBUG = True
 
 # ALLOWED_HOSTS = ['*']
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -164,6 +164,3 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 
 
-# import os
-if 'WEBSITE_HOSTNAME' in os.environ: # Running on Azure
-    from .azure import *
