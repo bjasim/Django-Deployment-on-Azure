@@ -25,8 +25,7 @@ def compute_fetch_view(request):
 
     # Delete only ComputeSpecifications entries that are related to the 'Compute' CloudService under 'Azure'
     ComputeSpecifications.objects.filter(cloud_service__in=compute_services).delete()
-    # subscription_id = [os.environ['AZURE_CREDENTIAL']]
-    subscription_id = 'dc5e68b9-258c-47a8-ac3e-0ba443186aa8'
+    subscription_id = [os.environ['AZURE_CREDENTIAL']]
     credential = DefaultAzureCredential()
     compute_client = ComputeManagementClient(credential, subscription_id)
     subscription_client = SubscriptionClient(credential)
