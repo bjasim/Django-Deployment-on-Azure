@@ -217,6 +217,9 @@ sku_to_service_code = {
     # "HY3BZPP2B6K8MSJF": "AmazonEC2",   # gp2-general purpose storage 0.10 per GB-Mo
 }
 
+def welcome_page(request):
+    return HttpResponse("Welcome to the BudgetCloud Backend app")
+
 
 def get_pricing_ec2(request):
     for sku, (service_code) in sku_to_service_code.items():

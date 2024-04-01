@@ -15,6 +15,8 @@ from aws_app.views import aws_vpc_fetch
 from aws_app.views import aws_route53_fetch
 from aws_app.views import aws_direct_fetch
 from aws_app.views import aws_cloudfront_fetch
+from aws_app.views import get_pricing_ec2
+
 
 
 
@@ -50,8 +52,8 @@ urlpatterns = [
     path('', include('aws_app.urls')),
 
     # AWS related--------------------------------------------------
-    path('aws/', get_pricing, name='get-pricing'),   #fetch pricing details to database tables for all services
-    path('aws-compute-fetch/', aws_compute_fetch, name='aws-compute-fetch'),    # Fetch to db for compute only
+    # path('aws/', get_pricing_ec2, name='get-pricing'),   #fetch pricing details to database tables for all services
+    path('aws-compute-fetch/', get_pricing_ec2, name='aws-compute-fetch'),    # Fetch to db for compute only
     path('aws-storage-fetch/', aws_storage_fetch, name='aws-storage-fetch'),    # Fetch to db for storage only
     path('aws-rds-fetch/', aws_rds_fetch, name='aws-rds-fetch'),                # Fetch to db for database services only
     path('aws-vpc-fetch/', aws_vpc_fetch, name='aws-vpc-fetch'),                # Fetch to db for VPC only
