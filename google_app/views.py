@@ -896,8 +896,12 @@ def calculated_data_gcp(monthly_budget, expected_cpu, database_service, database
 
     plan_annual_price = float(plan_monthly_price) * 12
 
-    computed_data['monthly'] = f"${round(plan_monthly_price, 2)}"
-    computed_data['annual'] = f"${round(plan_annual_price, 2)}"
+    # computed_data['monthly'] = f"${round(plan_monthly_price, 2)}"
+    # computed_data['annual'] = f"${round(plan_annual_price, 2)}"
+    computed_data['monthly'] = round(plan_monthly_price, 2)
+    computed_data['annual'] = round(plan_annual_price, 2)
+
+    
     if monthly_budget == "lessThan500" or monthly_budget == "under50":
         monthly_budget = 500
     if monthly_budget == "500to2000" or monthly_budget == "under50":
